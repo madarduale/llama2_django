@@ -1,0 +1,11 @@
+<!-- index.html -->
+<form method="post" action="{% url 'ask_question' %}">
+    {% csrf_token %}
+    <input type="text" name="question">
+    <button type="submit">Ask</button>
+</form>
+
+{% if response %}
+<h2>Response is</h2>
+<p>{{ response }}</p>
+{% endif %}
